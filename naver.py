@@ -13,6 +13,7 @@ soup = BeautifulSoup(response.text, 'html.parser')
 # .up : class가 up인 것.
 # CSS에서 id는 문서에서 하나, class는 여러개가 있을 수 있다.
 
+
 key = soup.select_one("#PM_ID_ct > div.header > div.section_navbar > div.area_hotkeyword.PM_CL_realtimeKeyword_base > div.ah_roll.PM_CL_realtimeKeyword_rolling_base")
 #key = soup.select_one(".ah_roll")
 
