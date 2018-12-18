@@ -8,3 +8,4 @@ print(type(os.listdir()))
 for file in files :
     #os.rename(file, "samsung"+file)
     os.rename(file, file.replace("SSAFY","samsung"))
+    
