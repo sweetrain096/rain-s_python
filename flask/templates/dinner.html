@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>{{menu}} 먹어!</h1>
+    <img src = "{{menus_url}}">
+    <!-- 출력을 하고 싶을 때 -->
+    
+    {% if menu == "초밥" %}
+        <h2>오늘은 행복한날 ㅎㅎㅎㅎ</h2>
+        
+    {% else %}
+        <h2>맛저합시당</h2>
+    {% endif %}
+    <!-- 로직을 구현하고 싶을 때 -->
+    <hr>
+    저녁 리스트는 이거였어.
+    {% for food in dinner %}
+        <p>{{food}}</p>
+    {% endfor %}
+    
+
+</body>
+</html>

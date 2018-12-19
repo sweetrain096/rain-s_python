@@ -2,48 +2,48 @@
 파이썬 dictionary 활용 기초!
 """
 
-# 1. 평균을 구하세요.
-iu_score = {
-    "수학": 80,
-    "국어": 90,
-    "음악": 100
-}
+# # 1. 평균을 구하세요.
+# iu_score = {
+#     "수학": 80,
+#     "국어": 90,
+#     "음악": 100
+# }
 
-score = 0
+# score = 0
 
-# 답변 코드는 아래에 작성해주세요.
-print("=====Q1=====")
-for value in iu_score.values() :
-    score = score+value
-print(score/len(iu_score))
-
-
+# # 답변 코드는 아래에 작성해주세요.
+# print("=====Q1=====")
+# for value in iu_score.values() :
+#     score = score+value
+# print(score/len(iu_score))
 
 
 
-# 2. 반 평균을 구하세요.
-score = {
-    "iu": {
-        "수학": 80,
-        "국어": 90,
-        "음악": 100
-    },
-    "ui": {
-        "수학": 80,
-        "국어": 90,
-        "음악": 100
-    }
-}
-# 답변 코드는 아래에 작성해주세요.
-print("=====Q2=====")
-avr = 0
-total = 0
-for person in score.values() :
-    #print(person)
-    for value in person.values() :
-        avr = avr+value
-        total = total+1
-print(avr/total)
+
+
+# # 2. 반 평균을 구하세요.
+# score = {
+#     "iu": {
+#         "수학": 80,
+#         "국어": 90,
+#         "음악": 100
+#     },
+#     "ui": {
+#         "수학": 80,
+#         "국어": 90,
+#         "음악": 100
+#     }
+# }
+# # 답변 코드는 아래에 작성해주세요.
+# print("=====Q2=====")
+# avr = 0
+# total = 0
+# for person in score.values() :
+#     #print(person)
+#     for value in person.values() :
+#         avr = avr+value
+#         total = total+1
+# print(avr/total)
 
 
 
@@ -56,6 +56,7 @@ print(avr/total)
 광주 : 값
 부산 : 값
 """
+
 # 3-1. 도시 중에 최근 3일 중에 가장 추웠던 곳, 가장 더웠던 곳은?
 city = {
     "서울": [-6, -10, 5],
@@ -64,11 +65,11 @@ city = {
     "부산": [2, -2, 9]
 }
 
-# 답변 코드는 아래에 작성해주세요.
-print("=====Q3=====")
+# # 답변 코드는 아래에 작성해주세요.
+# print("=====Q3=====")
 
-for key, value in city.items() :
-    print(f"{key} : {sum(value)/len(value)}")
+# for key, value in city.items() :
+#     print(f"{key} : {sum(value)/len(value)}")
 
 
 # 답변 코드는 아래에 작성해주세요.
@@ -85,8 +86,8 @@ print("=====Q3-1=====")
 # dict_max = max(city_th.keys(), key=(lambda k: city_th[k]))
 # print(dict_max)
 
-hot = 0
-cold = 0
+# hot = 0
+# cold = 0
 
 # for key, value in city.items() :
 #     for i in value :
@@ -97,25 +98,25 @@ cold = 0
 #         if cold>=i :
 #             cold = i
 #             min_city = key
-cnt = 0
 
-for key, value in city.items():
-    if cnt == 0:
-        hot = max(value)
-        cold = min(value)
-        min_city = key
-        max_city = key
-    else :
-        if (min(value)<cold) :
-            cold = min(value)
-            min_city = key
-        elif max(value) > hot :
-            hot = max(value)
-            max_city = key
-    cnt +=1
+# cnt = 0
+# for key, value in city.items():
+#     if cnt == 0:
+#         hot = max(value)
+#         cold = min(value)
+#         min_city = key
+#         max_city = key
+#     else :
+#         if (min(value)<cold) :
+#             cold = min(value)
+#             min_city = key
+#         elif max(value) > hot :
+#             hot = max(value)
+#             max_city = key
+#     cnt +=1
 
-print(f"가장 따뜻한 곳은 {max_city}입니다.")
-print(f"가장 추운 곳은 {min_city}입니다.")
+# print(f"가장 따뜻한 곳은 {max_city}입니다.")
+# print(f"가장 추운 곳은 {min_city}입니다.")
 
 
 
@@ -133,3 +134,5 @@ else :
 # a=[1,2,4]
 # 3 in a
 # #출력결과 : False
+
+
