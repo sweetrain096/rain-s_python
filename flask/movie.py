@@ -32,7 +32,11 @@ key = soup.select(".tit")
 #print(key[0]
 num = 1
 
-for i in key[0] :
-    print(num, i)
-    num += 1
-print(key[0].getitem())
+# for i in key[0] :
+#     print(num, i)
+#     num += 1
+
+# print(key[0].select(a))
+
+print(type(key[0]))
+#print(key[0])
