@@ -9,9 +9,11 @@ def GCD(a, b) :
         b = r
 
 t = int(input())
+
 for test_case in range(t):
     m, n, x, y = list(map(int, input().split()))
-    # print(m, n, x, y)
+    gcd = GCD(n, m)
+    print(m, n, x, y, gcd)
     result = -1
     if m <= n :
         cnt = int(n / GCD(n, m))
@@ -20,7 +22,7 @@ for test_case in range(t):
         for month in range(cnt):
             if first == y :
                 break
-            first -= (n - m)
+            first -= gcd
             if first <= 0:
                 first += n
         result = (month) * m + x
