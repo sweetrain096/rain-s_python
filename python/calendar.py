@@ -15,40 +15,20 @@ for test_case in range(t):
     gcd = GCD(n, m)
     print(m, n, x, y, gcd)
     result = -1
-    if m <= n :
-        cnt = int(n / GCD(n, m))
-        first = x
 
-        for month in range(cnt):
-            if first == y :
-                break
-            first -= gcd
-            if first <= 0:
-                first += n
-        result = (month) * m + x
-        if month + 1 == cnt and first != y:
-            result = -1
+    cnt = int(n / GCD(n, m))
+    print("cnt", cnt)
+    first = x
 
-
-    else:
-        cnt = int(n / GCD(m, n))
-        first = x
-
-        if first > n :
-            first -= n
-
-        for month in range(cnt):
-            if first == y:
-                break
-            first += (m - n)
-            # plus += 1
-            if first > n:
-                first -= n
-        result = (month) * m + x
-        if month + 1 == cnt and first != y:
-
-            result = -1
-
+    for month in range(cnt):
+        if first == y :
+            break
+        first -= gcd
+        if first <= 0:
+            first += n
+    result = (month) * m + x
+    if month + 1 == cnt and first != y:
+        result = -1
 
 
 
