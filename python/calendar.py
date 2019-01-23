@@ -13,22 +13,30 @@ t = int(input())
 for test_case in range(t):
     m, n, x, y = list(map(int, input().split()))
     gcd = GCD(n, m)
-    print(m, n, x, y, gcd)
+    lcm = int(n * m / gcd)
+    # print(m, n, x, y, gcd, lcm)
     result = -1
-
-    cnt = int(n / GCD(n, m))
-    print("cnt", cnt)
+    if m == x and n == y :
+        result = lcm
+    cnt = int(lcm / m)
+    # print("cnt", cnt)
     first = x
+    if first > n:
+        first = first % n
+        if not first :
+            first = y
+    # print(first)
 
     for month in range(cnt):
         if first == y :
+            result = (month) * m + x
             break
-        first -= gcd
-        if first <= 0:
-            first += n
-    result = (month) * m + x
-    if month + 1 == cnt and first != y:
-        result = -1
+        first += m
+        if first > n:
+            first = first % n
+            if not first:
+                first = n
+
 
 
 

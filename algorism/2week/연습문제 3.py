@@ -7,9 +7,10 @@
 '''
 
 def is_wall(x, y, check):
-    if x < 0 or x > 5 :
+    print(x, y)
+    if x < 0 or x >= 5 :
         return True
-    elif y < 0 or y > 5 :
+    elif y < 0 or y >= 5 :
         return True
     elif check == 0 and arr[x][y] != 0:
         return True
@@ -51,28 +52,32 @@ def selection_sort(a, b):
     x = 0
     y = 0
     for i in range(25):
-        print(x, y)
-        print(check)
+        #print(x, y)
+        #print(check)
         if check % 4 == 0:
             b[x][y] = a[i // 5][i % 5]
             y += 1
             if is_wall(x, y, check):
+                y -= 1
                 check += 1
 
         elif check % 4 == 1 :
             b[x][y] = a[i // 5][i % 5]
             x += 1
             if is_wall(x, y, check):
+                x -= 1
                 check += 1
         elif check % 4 == 2:
             b[x][y] = a[i // 5][i % 5]
             y -= 1
             if is_wall(x, y, check):
+                y += 1
                 check += 1
         else :
             b[x][y] = a[i // 5][i % 5]
             x -= 1
             if is_wall(x, y, check):
+                x += 1
                 check += 1
 
 
@@ -80,11 +85,17 @@ def selection_sort(a, b):
 
 
 arr = [[0 for _ in range(5)] for _ in range(5)]
+#
+# check_arr = [[0 for _ in range(5)] for _ in range(5)]
+# for i in range(5):
+#     check_arr[i] = list(map(int, input().split()))
 
-check_arr = [[0 for _ in range(5)] for _ in range(5)]
-for i in range(5):
-    check_arr[i] = list(map(int, input().split()))
 
+check_arr = [[9, 20, 2, 18, 11],
+[19, 1, 25, 3, 21],
+[8, 24, 10, 17, 7],
+[15, 4, 16, 5, 6],
+[12, 13, 22, 23, 14]]
 selection_sort(check_arr, arr)
 
 print(check_arr)
