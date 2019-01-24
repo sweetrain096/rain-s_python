@@ -10,11 +10,14 @@ check_cnt = 0
 
 for i in range (1, 1 << n):
     arr_sum = 0
+    check = 0
     for j in range(n):
         if i & (1 << j):
             arr_sum += arr[j]
-            print(arr[j], end = " ")
+            check += 1
 
+            print(arr[j], end = " ")
+    print(arr_sum, check)
     if not arr_sum :
         check_cnt += 1
     print()
