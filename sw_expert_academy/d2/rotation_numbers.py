@@ -9,3 +9,12 @@ for test_case in range(int(input())):
     rotation_270 = []
     for i in range(n):
         numbers.append(list(map(int, input().split())))
+
+    # 90
+
+
+
+
+
+    print(f"#{test_case + 1}")
+    print(numbers)
