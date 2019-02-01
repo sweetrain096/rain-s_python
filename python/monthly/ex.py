@@ -5,16 +5,16 @@ class Point:
 
 class Circle:
     def __init__(self, center, r):
-        self.center = center.x, center.y
+        self.center = center
         self.r = r
     def get_area(self):
         return 3.14 * (self.r**2)
     def get_perimeter(self):
         return 2 * 3.14 * self.r
     def get_center(self):
-        return self.center
+        return self.center.x, self.center.y
     def print(self):
-        print(f"Circle: {self.center}, r: {self.r}")
+        print(f"Circle: {self.center.x, self.center.y}, r: {self.r}")
 
 
 p1 = Point(0, 0)
