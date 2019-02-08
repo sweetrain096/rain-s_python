@@ -5,7 +5,6 @@ def GCD(a, b):
     bs = []
     while True :
         r = a % b
-        # print("r",r, "b", b)
         if not r :
             return bs
         a = b
@@ -17,28 +16,18 @@ def GCD(a, b):
 
 for tc in range(int(input())):
     a, b = map(int, input().split())
-    x = 0
+    x, y = 0, 0
     bs = GCD(a, b)
 
-    print(bs)
 
-
-
-
-
-
-    while True:
-
-        y = (1 - a * x)/b
-
+    for n in bs:
+        y = (1 - a * n)/b
         if y == int(y):
             break
 
-        y = (1 - a * (-x)) / b
+    if n == 0 or int(y) == 0 :
+        print(f"#{tc + 1} -1")
 
-        if type(y) == int:
-            break
-        x += 1
-
-    print(f"#{tc + 1} {x} {int(y)}")
+    else:
+        print(f"#{tc + 1} {n} {int(y)}")
 
