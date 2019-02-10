@@ -5,27 +5,24 @@ def GCD(a, b):
     bs = []
     while True :
         r = a % b
+        bs.append(b)
         if not r :
             return bs
         a = b
         b = r
-        bs.append(b)
-
-
 
 
 for tc in range(int(input())):
     a, b = map(int, input().split())
-    x, y = 0, 0
+    x, y = 0.5, 0.5
     bs = GCD(a, b)
-
 
     for n in bs:
         y = (1 - a * n)/b
         if y == int(y):
             break
 
-    if n == 0 or int(y) == 0 :
+    if n == 0.5 and y == 0.5 :
         print(f"#{tc + 1} -1")
 
     else:
