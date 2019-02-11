@@ -3,11 +3,19 @@ sys.stdin = open("3032_input.txt")
 
 def GCD(a, b):
     bs = []
+    rs = []
+
     while True :
         r = a % b
+
         bs.append(b)
+        rs.append(r)
+        # print(b)
         if not r :
+            print(bs)
+            print(rs)
             return bs
+
         a = b
         b = r
 
