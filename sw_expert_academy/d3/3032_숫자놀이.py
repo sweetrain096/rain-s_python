@@ -2,16 +2,19 @@ import sys
 sys.stdin = open("3032_input.txt")
 
 def GCD(a, b):
+    a_s = []
     bs = []
     rs = []
 
-    while True :
+    while True:
         r = a % b
-
+        x = a / (r - a)
+        a_s.append(a)
         bs.append(b)
         rs.append(r)
         # print(b)
-        if not r :
+        if not r:
+            print(a_s)
             print(bs)
             print(rs)
             return bs
@@ -30,7 +33,7 @@ for tc in range(int(input())):
         if y == int(y):
             break
 
-    if n == 0.5 and y == 0.5 :
+    if n == 0.5 and y == 0.5:
         print(f"#{tc + 1} -1")
 
     else:
