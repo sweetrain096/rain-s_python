@@ -16,15 +16,24 @@ def dfs(n):
                     stack.append(w)
 
     return result
-
+result = []
 # 재귀
 def dfs2(n):
-    result = []
+
     visited[n] = 1
     result.append(n)
     for w in range(v + 1):
         if graph[n][w] and not visited[w]:
             return dfs2(w)
+# 재귀
+def dfs3(n):
+    global graph, visited, v
+    visited[n] = 1
+    print(n, end=" ")
+
+    for w in range(1, v+1):
+        if graph[n][w] == 1 and visited[w] == 0:
+            dfs(w)
 
 
 
@@ -53,8 +62,12 @@ for g in range(1, v + 1):
 
 
 
-result = dfs(1)
-print(result)
+# result = dfs(1)
+# print(result)
 
-dfs2(1)
+# dfs2(1)
+# print(result)
+
+
+dfs3(1)
 print(result)
