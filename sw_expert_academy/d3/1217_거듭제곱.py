@@ -17,5 +17,4 @@ for tc in range(10):
     test_case = input()
     n, m = map(int, input().split())
     result = exponentiation(n, m)
-
     print(f"#{test_case} {result}")
