@@ -12,18 +12,29 @@ for tc in range(10):
 
         if token == '(':
             stack.append(token)
+        elif token == ')':
+            while True:
+                top = stack.pop()
+                if top != '(':
+                    postfix_notation.append(top)
+                else:
+                    break
+                print(stack, postfix_notation)
         elif not priority_list.get(token):
             postfix_notation.append(int(token))
-        elif token == ')':
-            while stack[-1] == '(':
-                postfix_notation.append(stack.pop())
+
 
         else:
-            cnt = -1
             # print(priority_list.get(stack[cnt]), priority_list.get(token) )
-            while priority_list.get(stack[cnt]) < priority_list.get(token):
+            if not stack:
                 stack.append(token)
-            postfix_notation.append(stack.pop())
+            else:
+                while priority_list.get(stack[-1]) >= priority_list.get(token):
+                    print(priority_list.get(stack[-1]), priority_list.get(token))
+                    print(stack, postfix_notation)
+                    postfix_notation.append(stack.pop())
+                stack.append(token)
+
 
         print(stack, postfix_notation)
 
