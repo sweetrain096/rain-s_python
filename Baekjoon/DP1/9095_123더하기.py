@@ -1,11 +1,10 @@
 import sys
 sys.stdin = open("9095_input.txt")
-
 def make_sum(n):
 
     for i in range(5, n + 1):
         sum_data.append(sum(sum_data[-3:]))
-        results.append(results[i - 1] + sum_data[i])
+        results.append(results[i - 1] + sum_data[i - 1])
     return results[n]
 
 
@@ -19,5 +18,5 @@ for tc in range(int(input())):
     else:
         result = make_sum(n)
 
-    print(sum_data, results)
+    # print(sum_data, results)
     print(result)
