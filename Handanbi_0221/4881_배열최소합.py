@@ -2,6 +2,9 @@ import sys
 sys.stdin = open("4881_input.txt")
 
 
+# 결국 순열이다!!
+# 완전검색 = 시간초과
+# 가지치기를 해야한다!!
 
 def makepermu(idx, cnt, make, visit, sum_):
     global arr
