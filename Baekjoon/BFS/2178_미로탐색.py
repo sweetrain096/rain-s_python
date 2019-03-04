@@ -30,7 +30,6 @@ def BFS(n, m, row, col):
         #     print(i)
         # print()
 
-
 n, m = map(int, input().split())
 maze = []
 for i in range(n):
