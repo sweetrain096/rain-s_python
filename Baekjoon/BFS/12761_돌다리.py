@@ -11,45 +11,42 @@ def check(number):
 def bfs(a, b, n, m):
     Q = [n]
     visited[n] = 1
-    check_cnt = Q[-1]
     cnt = 0
     order = ["-1", "+1"]
-    while cnt <= 1:
+    while Q:
         t = Q.pop(0)
-        if t == 
+        if visited[m]:
+            return visited[m] - 1
         for i in order:
             if check(t + int(i)):
                 Q.append(t + int(i))
-                visited[t + int(i)] = 1
+                visited[t + int(i)] = visited[t] + 1
         if check(t + a):
             Q.append(t + a)
-            visited[t + a] = 1
+            visited[t + a] = visited[t] + 1
         if check(t - a):
             Q.append(t - a)
-            visited[t - a] = 1
+            visited[t - a] = visited[t] + 1
         if check(t * a):
             Q.append(t * a)
-            visited[t * a] = 1
+            visited[t * a] = visited[t] + 1
         if check(t + b):
             Q.append(t + b)
-            visited[t + b] = 1
+            visited[t + b] = visited[t] + 1
         if check(t - b):
             Q.append(t - b)
-            visited[t - b] = 1
+            visited[t - b] = visited[t] + 1
         if check(t * b):
             Q.append(t * b)
-            visited[t * b] = 1
+            visited[t * b] = visited[t] + 1
+        # print(visited)
 
-        if check_cnt == t:
-            cnt += 1
-            print(check_cnt, Q[-1])
-            check_cnt = Q[-1]
 
-        print(Q)
-        print(cnt)
+    # print(Q)
+    # print(cnt)
 
 
 
 a, b, n, m = map(int, input().split())
 visited = [0 for _ in range(100001)]
-bfs(a, b, n, m)
+print(bfs(a, b, n, m))
