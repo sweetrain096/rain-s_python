@@ -65,9 +65,9 @@ for g in range(1, v + 1):
 # result = dfs(1)
 # print(result)
 
-# dfs2(1)
-# print(result)
-
-
-dfs3(1)
+dfs2(1)
 print(result)
+
+
+# dfs3(1)
+# print(result)
