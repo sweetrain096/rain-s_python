@@ -40,4 +40,4 @@ for tc in range(10):
 
     # for i in graph:
     #     print(i)
-    print(f"#{tc + 1} {max(result)}")
+    print("#{} {}".format(tc + 1, max(result)))
