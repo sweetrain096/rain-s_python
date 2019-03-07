@@ -1,0 +1,10 @@
+2 4
+CAAB
+ADCB
+=>3
+4 4
+ABCD
+EFAD
+ASDA
+NGHZ
+=>8
