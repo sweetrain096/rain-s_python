@@ -51,4 +51,4 @@ for tc in range(int(input())):
     # print(start)
 
     result = BFS(maze, start, 0)
-    print(f"#{tc + 1} {result}")
+    print("#{} {}".format(tc + 1, result))
