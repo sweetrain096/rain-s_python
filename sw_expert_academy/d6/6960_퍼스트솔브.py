@@ -106,9 +106,8 @@ for tc in range(int(input())):
     #     print(sec)
 
 
-
-
-    print(f"#{tc + 1} {sort_list} {result}")
+    print("#{} {} {}".format(tc + 1, sort_list, result))
+    # print(f"#{tc + 1} {sort_list} {result}")
     # print(f"#{tc + 1} {result}")
 
 
