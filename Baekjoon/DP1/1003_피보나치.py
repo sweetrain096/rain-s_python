@@ -39,9 +39,8 @@ for tc in range(int(input())):
     memo = [0, 1]
     cnt_0 = [1, 0]
     cnt_1 = [0, 1]
-
+    f = [0, 1]
     n = int(input())
     f = DP_fibo(n)
 
     print(cnt_0[n], cnt_1[n])
-
