@@ -33,4 +33,4 @@ for tc in range(int(input())):
         arr[j] = list(map(int, input().split()))
     makepermu(n, 0, make, visit, 0)
 
-    print(f"#{tc + 1} {result}")
+    print("#{} {}".format(tc + 1, result))
