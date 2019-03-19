@@ -21,5 +21,4 @@ for i in range(n):
     data.append(int(input()))
 
 # print(data)
-
 print(dp(n))
