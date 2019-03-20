@@ -1,0 +1,8 @@
+5 5
+e a b c d
+
+3 3
+a b c
+
+4 6
+a t c i s w
