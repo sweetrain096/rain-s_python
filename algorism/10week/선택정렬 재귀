@@ -1,0 +1,30 @@
+def selectionsort(A):
+    n = len(A)
+    for i in range(n - 1):
+        min = i
+
+        for j in range(i + 1, n):
+            if A[j] < A[min]:
+                min = j
+        A[min], A[i] = A[i], A[min]
+
+
+def selection_sort_recursion(start, end, A):
+    # print(start, end, data)
+    n = len(A)
+    min = start
+    if start == end:
+        return
+    for i in range(start + 1, n):
+        if A[i] < A[min]:
+            min = i
+
+    if min != 99999999999999:
+        A[start], A[min] = A[min], A[start]
+    selection_sort_recursion(start + 1, end, A)
+
+
+data = [3, 0, 2, 5, 6, 1, 7]
+# selectionsort(data)
+selection_sort_recursion(0, len(data), data)
+print(data)
