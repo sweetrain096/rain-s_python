@@ -37,14 +37,14 @@ for tc in range(10):
                 stack.append(token)
 
 
-    # print(stack, postfix_notation)
+        # print(stack, postfix_notation)
 
 
     if stack:
         while len(stack) != 0:
             postfix_notation.append(stack.pop())
 
-    print(''.join(map(str, postfix_notation)))
+    # print(f"#{tc + 1} {postfix_notation}")
 
     while len(postfix_notation) != 0:
         # print(stack, type(postfix_notation[0]))
@@ -64,4 +64,4 @@ for tc in range(10):
 
 
 
-    print("#{} {}".format(tc + 1, result))
+    print(f"#{tc + 1} {result}")
