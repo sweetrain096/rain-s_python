@@ -1,3 +1,5 @@
-a = 4+3j
+def concat (str1, str2):
+    return '{} - {}'.format(str1, str2)
 
-print(a.real)
+
+print(concat('안녕', '하세요'))
