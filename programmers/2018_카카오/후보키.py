@@ -2,60 +2,51 @@ relation = [["100","ryan","music","2"],["200","apeach","math","2"],["300","tube"
 
 import itertools
 
+def is_visited(visited, candidate):
+    print("is_visited", visited, candidate)
 
+    if visited:
+        for visit_check in visited:
+            print(visit_check)
+            if len(set(visit_check + candidate)) == len(visit_check):
+                return True
+    return False
 
 def solution(relation):
-    row = len(relation)
-    col = len(relation[0])
-    col_nums = [i for i in range(1, col + 1)]
+    data = [[0 for _ in range(len(relation))] for _ in range(len(relation[0]))]
+    for r in range(len(relation)):
+        for c in range(len(relation[0])):
+            data[c][r] = relation[r][c]
+    print(data)
+
+    r, c = len(data), len(data[0])
+
+    index_num = [i for i in range(r)]
     candidates = []
 
-    for i in range(1, col + 1):
-        els = [list(x) for x in itertools.combinations(col_nums, i)]
-        candidates.extend(els)
+    for i in range(1, r + 1):
+        candidates.extend([list(x) for x in itertools.combinations(index_num, i)])
     print(candidates)
 
-    result = []
+    visited = []
+    for candidate in candidates:
+        print(is_visited(visited, candidate))
+        # if is_visited(visited, candidate):
+        #     continue
 
-    for check_list in candidates:
-        print(check_list)
-        test_data = []
-        for index in check_list:
-            print(relation[:])
-            test_data += relation[:][index]
-        print(test_data)
+        test_data = [[] for _ in range(c)]
+        for index in candidate:
+            for in_index in range(c):
+                test_data[in_index].append(data[index][in_index])
+        for j in range(len(test_data)):
+            test_data[j] = '/'.join(test_data[j])
+        # print(test_data)
+        # print(set(test_data))
+        if c == len(set(test_data)):
+            visited.append(candidate)
+        print(visited)
 
-
-
-    answer = 0
-    visited = {}
-
-
-
-
-
-
-
-    for c in range(col):
-        check = {}
-        is_true = True
-        for r in range(row):
-            print(relation[r][c])
-            if check.get(relation[r][c]):
-                is_true = False
-                break
-            check[relation[r][c]] = 1
-        if is_true:
-            visited[c] = 1
-    print(visited)
-    return answer
-
-
-
-
-
-
-
+        print(len(visited))
 
 
 
