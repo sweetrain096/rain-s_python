@@ -2,7 +2,7 @@
 중복되지 않게 4C3
 '''
 
-def combination(n, r, q):
+def combination(n, r):
     # 뽑을 수 있는 값이 없을 때 print
     if not r:
         print(T)
@@ -11,10 +11,10 @@ def combination(n, r, q):
         return
     else:
         T[r - 1] = A[n - 1]
-        combination(n - 1, r - 1, q)
-        combination(n - 1, r, q)
+        combination(n - 1, r - 1)
+        combination(n - 1, r)
 
 
 A = [1, 2, 3, 4]
 T = [0] * 3
-combination(4, 3, 3)
+combination(4, 3)

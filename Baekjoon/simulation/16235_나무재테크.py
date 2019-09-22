@@ -13,11 +13,12 @@ def is_wall(x, y):
         return True
     return False
 
-Tree_map = []
+Tree_map = [[[] for _ in range(N)] for _ in range(N)]
 for cnt in range(M):
     x, y, z = map(int, input().split())
-    Tree_map.append([z, x-1, y-1])
-Tree_map.sort(reverse=True)
+    Tree_map[x-1][y-1] += [z]
+pprint.pprint(Tree_map)
+
 fertilize = [[5 for _ in range(N)] for _ in range(N)]
 # print(fertilize)
 
