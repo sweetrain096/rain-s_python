@@ -4,7 +4,8 @@ def selection_sort(data):
         for j in range(i + 1, len(data)):
             if data[min_index] > data[j]:
                 min_index = j
-        data[i], data[min_index] = data[min_index], data[i]
+        if min_index != i:
+            data[i], data[min_index] = data[min_index], data[i]
 
 data = [4, 6, 3, 7, 8, 1, 9, 5, 2]
 selection_sort(data)
