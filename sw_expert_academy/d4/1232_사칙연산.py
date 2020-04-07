@@ -5,8 +5,22 @@ sys.stdin = open("1232_input.txt")
 def inorder(node):
     if node:
         inorder(tree[node][2])
-        formula.append(tree[node][1])
         inorder(tree[node][3])
+        # print(tree[node][1], formula)
+        if type(tree[node][1]) != int:
+            ele2 = formula.pop()
+            ele1 = formula.pop()
+            if tree[node][1] == '+':
+                formula.append(ele1 + ele2)
+            elif tree[node][1] == '-':
+                formula.append(ele1 - ele2)
+            elif tree[node][1] == '*':
+                formula.append(ele1 * ele2)
+            else:
+                formula.append(ele1 / ele2)
+            return
+
+        formula.append(tree[node][1])
 
 def calculate(formula):
     calc = formula[0]
@@ -34,8 +48,9 @@ for tc in range(10):
             tmp[1] = int(tmp[1])
             tmp.extend([0,0])
         tree.append(tmp)
-    print(tree)
+    # print(tree)
     formula = []
     inorder(1)
-    print(formula)
-    print(calculate(formula))
+    # print(formula)
+    print(f"#{tc + 1} {int(formula[0])}")
+    # print(calculate(formula))
